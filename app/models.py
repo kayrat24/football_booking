@@ -6,6 +6,7 @@ class Post(models.Model):
     body = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=0)
     adress = models.CharField(max_length=200)
+    images = models.ImageField(upload_to='media/')
 
     def __str__(self):
         return self.title
