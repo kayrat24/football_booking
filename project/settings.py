@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app'
+    'app',
+    'accounts',
+    'authtools',
 ]
 
 MIDDLEWARE = [
@@ -125,7 +127,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home' 
+LOGIN_REDIRECT_URL = 'posts_list_url'
+LOGOUT_REDIRECT_URL = 'posts_list_url' 
 
+AUTH_USER_MODEL = "accounts.User"
 
