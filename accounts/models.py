@@ -10,11 +10,10 @@ class User(AbstractEmailUser):
         )
 
     def get_full_name(self):
-        return self.name
+        return self.full_name
 
     def get_short_name(self):
-        return self.name
+        return self.full_name
 
-from django.db import models
 
 # Create your models here.
