@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    {% for post in object_list %}
+    {% for post in page_object %}
         <div>
             <h2><a href="{% url 'field_detail' post.pk %}">{{ post.title }}</a></h2>
             <p>{{ post.price }}$</p>
