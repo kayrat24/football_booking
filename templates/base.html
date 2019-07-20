@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FootBall Pole</title>
+</head>
+<body>
+    <header>
+        <h1><a href="{% url 'home' %}">Football fields</a></h1>
+    </header>
+    <div class="nav-right">
+        <button type="button" class="btn btn-success"><a href="{% url 'field_new' %}">Add new Field</a></button>
+    </div>
+    {% if user.is_authenticated %}
+    <p>Hi {{ user.username }}!</p>
+    <button>
+        <p><a href="{% url 'logout' %}">Log out</a></p>
+    </button> {% else %}
+    <p>You are not logged in.</p>
+    <button><a href="{% url 'login' %}">Log In</a></button>
+    <p>If you have not account.</p>
+    <a href="{% url 'signup' %}">Sign Up</a> {% endif %} {% block content %} {% endblock content %}
+
+    </div>
+</body>
+</html>
+
