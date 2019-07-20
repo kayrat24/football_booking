@@ -15,3 +15,6 @@ class User(AbstractEmailUser):
     def get_short_name(self):
         return self.name
 
+from django.db import models
+
+# Create your models here.

@@ -8,15 +8,9 @@
 </head>
 <body>
     <header>
-        <h1><a href="{% url 'posts_list_url' %}">Football fields</a></h1>
+        <h1><a href="{% url 'home' %}">Football fields</a></h1>
     </header>
     <div class="nav-right">
-           <nav class="navbar navbar-light bg-light">
-                <form class="form-inline my-2 my-lg-0" action="{% url 'posts_list_url' %}">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </nav>
         <button type="button" class="btn btn-success"><a href="{% url 'field_new' %}">Add new Field</a></button>
     </div>
     {% if user.is_authenticated %}
