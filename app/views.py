@@ -87,4 +87,4 @@ class FieldDetailView(DetailView):
 class FieldCreateView(CreateView): 
     model = Post
     template_name = 'field_new.html'
-    fields = ['title', 'price', 'body', 'adress']
+    fields = ['title', 'price', 'body', 'adress', 'images']

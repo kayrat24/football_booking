@@ -37,9 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apps.taskapp.celery.CeleryConfig',
+    'apps.users.apps.UsersConfig',
+    'apps.website.apps.WebsiteConfig',
     'app',
-    'accounts',
     'authtools',
+    'crispy_forms',
+
+
 ]
 
 MIDDLEWARE = [
@@ -51,7 +56,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+AUTH_USER_MODEL = 'users.User'
 ROOT_URLCONF = 'project.urls'
 
 TEMPLATES = [
@@ -130,7 +135,26 @@ STATICFILES_DIRS = [
 LOGIN_REDIRECT_URL = 'posts_list_url'
 LOGOUT_REDIRECT_URL = 'posts_list_url' 
 
-AUTH_USER_MODEL = "accounts.User"
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+EMAIL_HOST = 'smtp.mail.ru'
+EMAIL_PORT = 2525
+EMAIL_HOST_USER = "itacademy_test@mail.ru"
+EMAIL_HOST_PASSWORD = "Test123456789Test"
+EMAIL_USE_TLS = True
+
+SERVER_EMAIL = EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+LOGIN_REDIRECT_URL = '/'
+ADMIN_EMAIL = 'jumasheff@gmail.com'
+
+# Celery application definition
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'

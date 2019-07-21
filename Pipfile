@@ -7,8 +7,15 @@ verify_ssl = true
 
 [packages]
 django = "*"
+<<<<<<< HEAD
 django-authtools = "*"
 pillow = "*"
+=======
+django-authtools = "==1.6.0"
+pillow = "*"
+celery = "==4.1.1"
+redis = "==2.10.6"
+>>>>>>> frontend
 
 [requires]
 python_version = "3.6"
