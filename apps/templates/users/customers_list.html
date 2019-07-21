@@ -1,0 +1,12 @@
+{% extends "shared/base.html" %}
+{% block title %}Customers list{% endblock %}
+{%block content%}
+    {% if no_permission %}
+        <p>{{ no_permission_text }}</p>
+    {% else %}
+        {% for x in object_list %}
+            <p>{{ x }}</p>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
+
